@@ -25,15 +25,15 @@ namespace PropertyManagementApp.Models
         [Required]
         [Phone]
         [Display(Name ="Office Phone Number")]
-        public int OfficePhone { get; set; }
+        public PhoneAttribute OfficePhone { get; set; }
 
         [Phone]
         [Display(Name ="Mobile Phone Number")]
-        public int? MobilePhone { get; set; }
+        public PhoneAttribute MobilePhone { get; set; }
 
         [EmailAddress]
         [Display(Name ="Email Address")]
-        public string Email { get; set; }
+        public EmailAddressAttribute Email { get; set; }
 
         [Display(Name ="Street Address")]
         public string StreetAddress { get; set; }
