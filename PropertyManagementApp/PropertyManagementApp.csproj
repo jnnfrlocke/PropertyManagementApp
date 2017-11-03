@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
+    <Compile Include="Controllers\ServiceRequestsController.cs" />
     <Compile Include="Controllers\TypesOfServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +205,10 @@
     <Compile Include="Migrations\201711031612121_After adding controllers and views.cs" />
     <Compile Include="Migrations\201711031612121_After adding controllers and views.Designer.cs">
       <DependentUpon>201711031612121_After adding controllers and views.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031828273_Fix type errors.cs" />
+    <Compile Include="Migrations\201711031828273_Fix type errors.Designer.cs">
+      <DependentUpon>201711031828273_Fix type errors.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,6 +287,11 @@
     <Content Include="Views\TypesOfServices\Details.cshtml" />
     <Content Include="Views\TypesOfServices\Edit.cshtml" />
     <Content Include="Views\TypesOfServices\Index.cshtml" />
+    <Content Include="Views\ServiceRequests\Create.cshtml" />
+    <Content Include="Views\ServiceRequests\Delete.cshtml" />
+    <Content Include="Views\ServiceRequests\Details.cshtml" />
+    <Content Include="Views\ServiceRequests\Edit.cshtml" />
+    <Content Include="Views\ServiceRequests\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711031612121_After adding controllers and views.resx">
       <DependentUpon>201711031612121_After adding controllers and views.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031828273_Fix type errors.resx">
+      <DependentUpon>201711031828273_Fix type errors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

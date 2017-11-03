@@ -33,5 +33,7 @@ namespace PropertyManagementApp.Models
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.PreferredServiceProviders> PreferredServiceProviders { get; set; }
 
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.TypesOfService> TypesOfServices { get; set; }
+
+        public System.Data.Entity.DbSet<PropertyManagementApp.Models.ServiceRequests> ServiceRequests { get; set; }
     }
 }
