@@ -191,6 +191,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -215,9 +216,14 @@
     <Compile Include="Migrations\201711031845080_Role Controller.Designer.cs">
       <DependentUpon>201711031845080_Role Controller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711032055507_Add Locations.cs" />
+    <Compile Include="Migrations\201711032055507_Add Locations.Designer.cs">
+      <DependentUpon>201711032055507_Add Locations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Locations.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PreferredServiceProviders.cs" />
     <Compile Include="Models\ServiceRequests.cs" />
@@ -297,6 +303,11 @@
     <Content Include="Views\ServiceRequests\Details.cshtml" />
     <Content Include="Views\ServiceRequests\Edit.cshtml" />
     <Content Include="Views\ServiceRequests\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711031845080_Role Controller.resx">
       <DependentUpon>201711031845080_Role Controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711032055507_Add Locations.resx">
+      <DependentUpon>201711032055507_Add Locations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

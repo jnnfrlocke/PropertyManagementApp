@@ -35,5 +35,7 @@ namespace PropertyManagementApp.Models
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.TypesOfService> TypesOfServices { get; set; }
 
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.ServiceRequests> ServiceRequests { get; set; }
+
+        public System.Data.Entity.DbSet<PropertyManagementApp.Models.Locations> Locations { get; set; }
     }
 }
