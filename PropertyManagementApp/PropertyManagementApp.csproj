@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ServiceRequestsController.cs" />
     <Compile Include="Controllers\TypesOfServicesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -209,6 +210,10 @@
     <Compile Include="Migrations\201711031828273_Fix type errors.cs" />
     <Compile Include="Migrations\201711031828273_Fix type errors.Designer.cs">
       <DependentUpon>201711031828273_Fix type errors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031845080_Role Controller.cs" />
+    <Compile Include="Migrations\201711031845080_Role Controller.Designer.cs">
+      <DependentUpon>201711031845080_Role Controller.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -295,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711031828273_Fix type errors.resx">
       <DependentUpon>201711031828273_Fix type errors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031845080_Role Controller.resx">
+      <DependentUpon>201711031845080_Role Controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
