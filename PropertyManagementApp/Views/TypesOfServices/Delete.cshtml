@@ -1,0 +1,153 @@
+﻿@model PropertyManagementApp.Models.TypesOfService
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TypesOfService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Landscaping)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Landscaping)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SnowRemoval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SnowRemoval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exterior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exterior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plumbing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plumbing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Electrical)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Electrical)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appliances)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appliances)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Painting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Painting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HVAC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HVAC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Roofing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roofing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Windows)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Windows)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cleaning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cleaning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carpet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carpet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrywallInsulation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrywallInsulation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doors)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

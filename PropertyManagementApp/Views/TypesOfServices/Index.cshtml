@@ -1,0 +1,124 @@
+﻿@model IEnumerable<PropertyManagementApp.Models.TypesOfService>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Landscaping)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SnowRemoval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plumbing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Electrical)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appliances)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Painting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.General)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HVAC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roofing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Windows)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cleaning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carpet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrywallInsulation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doors)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Landscaping)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SnowRemoval)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exterior)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plumbing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Electrical)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appliances)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Painting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.General)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HVAC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roofing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Windows)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cleaning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carpet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DrywallInsulation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doors)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

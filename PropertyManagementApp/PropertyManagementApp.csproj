@@ -192,9 +192,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
+    <Compile Include="Controllers\TypesOfServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711031606442_TypesOfService and PreferredServiceProviders.cs" />
+    <Compile Include="Migrations\201711031606442_TypesOfService and PreferredServiceProviders.Designer.cs">
+      <DependentUpon>201711031606442_TypesOfService and PreferredServiceProviders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711031612121_After adding controllers and views.cs" />
+    <Compile Include="Migrations\201711031612121_After adding controllers and views.Designer.cs">
+      <DependentUpon>201711031612121_After adding controllers and views.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -260,6 +271,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PreferredServiceProviders\Create.cshtml" />
+    <Content Include="Views\PreferredServiceProviders\Delete.cshtml" />
+    <Content Include="Views\PreferredServiceProviders\Details.cshtml" />
+    <Content Include="Views\PreferredServiceProviders\Edit.cshtml" />
+    <Content Include="Views\PreferredServiceProviders\Index.cshtml" />
+    <Content Include="Views\TypesOfServices\Create.cshtml" />
+    <Content Include="Views\TypesOfServices\Delete.cshtml" />
+    <Content Include="Views\TypesOfServices\Details.cshtml" />
+    <Content Include="Views\TypesOfServices\Edit.cshtml" />
+    <Content Include="Views\TypesOfServices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,6 +297,14 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711031606442_TypesOfService and PreferredServiceProviders.resx">
+      <DependentUpon>201711031606442_TypesOfService and PreferredServiceProviders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711031612121_After adding controllers and views.resx">
+      <DependentUpon>201711031612121_After adding controllers and views.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
