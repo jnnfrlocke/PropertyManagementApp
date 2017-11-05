@@ -13,7 +13,11 @@ namespace PropertyManagementApp.Models
 
         public string Name { get; set; }
 
-        public string Address { get; set; }
+        [Display(Name ="Street Number")]
+        public string StreetNumber { get; set; }
+
+        [Display(Name ="Street Name")]
+        public string StreetName { get; set; }
 
         public string City { get; set; }
 
