@@ -13,6 +13,7 @@ namespace PropertyManagementApp.Models
 
         public string Name { get; set; }
 
+        [Display(Name ="Name of Building")]
         public string Location { get; set; }
 
         [Display(Name ="Type of Service")]
@@ -25,7 +26,8 @@ namespace PropertyManagementApp.Models
         [Display(Name ="Date Submitted")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateSubmitted { get; set; }
+        
+        public DateTime? DateSubmitted { get; set; }
 
         [Display(Name ="Contractor Used")]
         public string ContractorUsed { get; set; }

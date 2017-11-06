@@ -10,112 +10,112 @@ using PropertyManagementApp.Models;
 
 namespace PropertyManagementApp.Controllers
 {
-    public class LocationsController : Controller
+    public class ResidentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Locations
+        // GET: Residents
         public ActionResult Index()
         {
-            return View(db.Locations.ToList());
+            return View(db.Residents.ToList());
         }
 
-        public ActionResult Buildings()
+        public ActionResult Welcome()
         {
-            return View(db.Locations.ToList());
+            return View();
         }
 
-        // GET: Locations/Details/5
+        // GET: Residents/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Locations locations = db.Locations.Find(id);
-            if (locations == null)
+            Resident resident = db.Residents.Find(id);
+            if (resident == null)
             {
                 return HttpNotFound();
             }
-            return View(locations);
+            return View(resident);
         }
 
-        // GET: Locations/Create
+        // GET: Residents/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Locations/Create
+        // POST: Residents/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,StreetNumber,StreetName,City,State,ZipCode,PhoneNumber,Lat,Long")] Locations locations)
+        public ActionResult Create([Bind(Include = "Id,Name,Location,Unit,EmailAddress")] Resident resident)
         {
             if (ModelState.IsValid)
             {
-                db.Locations.Add(locations);
+                db.Residents.Add(resident);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(locations);
+            return View(resident);
         }
 
-        // GET: Locations/Edit/5
+        // GET: Residents/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Locations locations = db.Locations.Find(id);
-            if (locations == null)
+            Resident resident = db.Residents.Find(id);
+            if (resident == null)
             {
                 return HttpNotFound();
             }
-            return View(locations);
+            return View(resident);
         }
 
-        // POST: Locations/Edit/5
+        // POST: Residents/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,StreetNumber,StreetName,City,State,ZipCode,PhoneNumber,Lat,Long")] Locations locations)
+        public ActionResult Edit([Bind(Include = "Id,Name,Location,Unit,EmailAddress")] Resident resident)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(locations).State = EntityState.Modified;
+                db.Entry(resident).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(locations);
+            return View(resident);
         }
 
-        // GET: Locations/Delete/5
+        // GET: Residents/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Locations locations = db.Locations.Find(id);
-            if (locations == null)
+            Resident resident = db.Residents.Find(id);
+            if (resident == null)
             {
                 return HttpNotFound();
             }
-            return View(locations);
+            return View(resident);
         }
 
-        // POST: Locations/Delete/5
+        // POST: Residents/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Locations locations = db.Locations.Find(id);
-            db.Locations.Remove(locations);
+            Resident resident = db.Residents.Find(id);
+            db.Residents.Remove(resident);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

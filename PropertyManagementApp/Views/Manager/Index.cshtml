@@ -1,0 +1,34 @@
+﻿@model PropertyManagementApp.Models.Manager
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*TODO: Need links to send email, view payments, and post vacancies - post vacancies through Locations/Vacancies view somehow?*@
+
+<h2>@ViewBag.Title</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 table-bordered">
+            <h4><a href="~/ServiceRequests">Units Currently Needing Service</a></h4>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <h4><a href="~/PreferredServiceProviders">Service Providers</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 table-bordered">
+            <h4>Send Email</h4>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <h4>Payments</h4>
+        </div>
+     </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 table-bordered">
+            <h4>Post Vacancies</h4>
+        </div>
+    </div>
+</div>
+

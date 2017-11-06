@@ -113,8 +113,8 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.0.0\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,6 +122,25 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.1\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -140,8 +159,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -203,6 +220,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
+    <Compile Include="Controllers\ResidentsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ServiceRequestsController.cs" />
     <Compile Include="Controllers\TypesOfServicesController.cs" />
@@ -233,6 +251,42 @@
     <Compile Include="Migrations\201711052104282_Add StreetNumber to Location model.Designer.cs">
       <DependentUpon>201711052104282_Add StreetNumber to Location model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711061539390_Add manager model.cs" />
+    <Compile Include="Migrations\201711061539390_Add manager model.Designer.cs">
+      <DependentUpon>201711061539390_Add manager model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061604467_Viewing index of ServiceRequests claims model has changed.cs" />
+    <Compile Include="Migrations\201711061604467_Viewing index of ServiceRequests claims model has changed.Designer.cs">
+      <DependentUpon>201711061604467_Viewing index of ServiceRequests claims model has changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061636196_Add resident Model.cs" />
+    <Compile Include="Migrations\201711061636196_Add resident Model.Designer.cs">
+      <DependentUpon>201711061636196_Add resident Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061645234_Update resident Model.cs" />
+    <Compile Include="Migrations\201711061645234_Update resident Model.Designer.cs">
+      <DependentUpon>201711061645234_Update resident Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061648217_Change display name on Location in ServiceRequests model.cs" />
+    <Compile Include="Migrations\201711061648217_Change display name on Location in ServiceRequests model.Designer.cs">
+      <DependentUpon>201711061648217_Change display name on Location in ServiceRequests model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061706171_get up to date.cs" />
+    <Compile Include="Migrations\201711061706171_get up to date.Designer.cs">
+      <DependentUpon>201711061706171_get up to date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711061734588_Rescaffold.cs" />
+    <Compile Include="Migrations\201711061734588_Rescaffold.Designer.cs">
+      <DependentUpon>201711061734588_Rescaffold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711062040239_Change data type in DateSubmitted in ServiceRequests.cs" />
+    <Compile Include="Migrations\201711062040239_Change data type in DateSubmitted in ServiceRequests.Designer.cs">
+      <DependentUpon>201711062040239_Change data type in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.cs" />
+    <Compile Include="Migrations\201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.Designer.cs">
+      <DependentUpon>201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -240,6 +294,7 @@
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PreferredServiceProviders.cs" />
+    <Compile Include="Models\Resident.cs" />
     <Compile Include="Models\ServiceRequests.cs" />
     <Compile Include="Models\TypesOfService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,7 +346,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -340,17 +397,24 @@
     <Content Include="Views\ServiceRequests\Details.cshtml" />
     <Content Include="Views\ServiceRequests\Edit.cshtml" />
     <Content Include="Views\ServiceRequests\Index.cshtml" />
+    <Content Include="Views\Home\Maps.cshtml" />
+    <Content Include="Views\Welcome\Manager.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Home\Maps.cshtml" />
-    <Content Include="Views\Welcome\Manager.cshtml" />
+    <Content Include="Views\Residents\Create.cshtml" />
+    <Content Include="Views\Residents\Delete.cshtml" />
+    <Content Include="Views\Residents\Details.cshtml" />
+    <Content Include="Views\Residents\Edit.cshtml" />
+    <Content Include="Views\Residents\Index.cshtml" />
+    <Content Include="Views\Residents\Welcome.cshtml" />
+    <Content Include="Views\Locations\Buildings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Manager\" />
     <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +440,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711052104282_Add StreetNumber to Location model.resx">
       <DependentUpon>201711052104282_Add StreetNumber to Location model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061539390_Add manager model.resx">
+      <DependentUpon>201711061539390_Add manager model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061604467_Viewing index of ServiceRequests claims model has changed.resx">
+      <DependentUpon>201711061604467_Viewing index of ServiceRequests claims model has changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061636196_Add resident Model.resx">
+      <DependentUpon>201711061636196_Add resident Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061645234_Update resident Model.resx">
+      <DependentUpon>201711061645234_Update resident Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061648217_Change display name on Location in ServiceRequests model.resx">
+      <DependentUpon>201711061648217_Change display name on Location in ServiceRequests model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061706171_get up to date.resx">
+      <DependentUpon>201711061706171_get up to date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711061734588_Rescaffold.resx">
+      <DependentUpon>201711061734588_Rescaffold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062040239_Change data type in DateSubmitted in ServiceRequests.resx">
+      <DependentUpon>201711062040239_Change data type in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.resx">
+      <DependentUpon>201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

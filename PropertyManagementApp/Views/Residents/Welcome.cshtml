@@ -1,0 +1,45 @@
+﻿@model PropertyManagementApp.Models.Resident
+
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 table-bordered">
+            <h4><a href="~/ServiceRequests/Create">Submit a Service Request</a></h4>
+        </div>
+        <div class="col-md-5 table-bordered">
+            <h4><a href="">Send an Email</a></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 table-bordered">
+            <h4>Pay Rent</h4>
+        </div>
+    </div>
+</div>
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

@@ -37,5 +37,9 @@ namespace PropertyManagementApp.Models
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.ServiceRequests> ServiceRequests { get; set; }
 
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.Locations> Locations { get; set; }
+
+        public System.Data.Entity.DbSet<PropertyManagementApp.Models.Manager> Managers { get; set; }
+
+        public System.Data.Entity.DbSet<PropertyManagementApp.Models.Resident> Residents { get; set; }
     }
 }
