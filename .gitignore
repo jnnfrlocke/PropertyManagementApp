@@ -287,3 +287,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 /PropertyManagementApp.sln
+/PropertyManagementApp/Properties/Settings.settings

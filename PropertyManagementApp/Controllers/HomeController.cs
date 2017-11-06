@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RestSharp;
+using PropertyManagementApp.Apis;
 
 namespace PropertyManagementApp.Controllers
 {
@@ -10,6 +12,15 @@ namespace PropertyManagementApp.Controllers
     {
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult Maps()
+        {
+            //GoogleMaps newMap = new GoogleMaps();
+            //string coordinates = newMap.GetQueryUrl();
+
+
             return View();
         }
 
