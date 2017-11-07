@@ -43,5 +43,7 @@ namespace PropertyManagementApp.Models
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.Resident> Residents { get; set; }
 
         public System.Data.Entity.DbSet<PropertyManagementApp.Models.Vacancies> Vacancies { get; set; }
+
+        public System.Data.Entity.DbSet<PropertyManagementApp.Models.Messages> Messages { get; set; }
     }
 }

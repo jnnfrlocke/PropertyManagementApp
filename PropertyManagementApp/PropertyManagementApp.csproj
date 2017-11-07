@@ -220,6 +220,7 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
     <Compile Include="Controllers\ResidentsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -349,12 +350,17 @@
     <Compile Include="Migrations\201711071519099_Create vacancies model.Designer.cs">
       <DependentUpon>201711071519099_Create vacancies model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711071905013_Add messages controller.cs" />
+    <Compile Include="Migrations\201711071905013_Add messages controller.Designer.cs">
+      <DependentUpon>201711071905013_Add messages controller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Locations.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Messages.cs" />
     <Compile Include="Models\PreferredServiceProviders.cs" />
     <Compile Include="Models\Resident.cs" />
     <Compile Include="Models\ServiceRequests.cs" />
@@ -482,6 +488,11 @@
     <Content Include="Views\Vacancies\Edit.cshtml" />
     <Content Include="Views\Vacancies\Index.cshtml" />
     <Content Include="Views\Vacancies\ViewVacancies.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -582,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071519099_Create vacancies model.resx">
       <DependentUpon>201711071519099_Create vacancies model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071905013_Add messages controller.resx">
+      <DependentUpon>201711071905013_Add messages controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

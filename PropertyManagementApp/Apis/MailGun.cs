@@ -9,14 +9,17 @@ namespace PropertyManagementApp.Apis
 {
     public class MailGun
     {
-        public static void Main(string[] args)
+        public MailGun()
         {
-            Console.WriteLine(SendSimpleMessage().Content.ToString());
         }
 
-        public IRestResponse SendSimpleMessage()
+        public IRestResponse SendToSingleEmail()
         {
             string email = "jen@jllocke.com"; // may need to send this in as a parameter
+            string subject = "Email subject";
+            string body = "This is the body";
+            string sender = "Mailgun Sandbox <postmaster@sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org>";
+
 
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
@@ -25,11 +28,10 @@ namespace PropertyManagementApp.Apis
             RestRequest request = new RestRequest();
             request.AddParameter("domain", "sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", "Mailgun Sandbox <postmaster@sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org>");
+            request.AddParameter("from", sender);
             request.AddParameter("to", email);
-            //request.AddParameter("to", "Jen Locke <jenlocke643@msn.com>");
-            request.AddParameter("subject", "Hello");
-            request.AddParameter("text", "Testing some Mailgun awesomeness!");
+            request.AddParameter("subject", subject);
+            request.AddParameter("text", body);
             request.Method = Method.POST;
             return client.Execute(request);
         }
