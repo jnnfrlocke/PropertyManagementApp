@@ -24,7 +24,7 @@ namespace PropertyManagementApp.Apis
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
-                new HttpBasicAuthenticator("api", "key-8809769e2ac9045d78fd4e9ef51fe639");
+                new HttpBasicAuthenticator("api", MailgunKey);
             RestRequest request = new RestRequest();
             request.AddParameter("domain", "sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
