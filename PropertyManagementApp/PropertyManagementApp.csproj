@@ -468,6 +468,7 @@
     <Content Include="Views\Residents\Index.cshtml" />
     <Content Include="Views\Residents\Welcome.cshtml" />
     <Content Include="Views\Locations\Buildings.cshtml" />
+    <Content Include="Views\ServiceRequests\Success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

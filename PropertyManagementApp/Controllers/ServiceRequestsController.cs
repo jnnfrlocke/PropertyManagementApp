@@ -38,10 +38,6 @@ namespace PropertyManagementApp.Controllers
         // GET: ServiceRequests/Create
         public ActionResult Create()
         {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction()
-            }
             return View();
         }
 
@@ -56,10 +52,15 @@ namespace PropertyManagementApp.Controllers
             {
                 db.ServiceRequests.Add(serviceRequests);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Success");
             }
 
             return View(serviceRequests);
+        }
+
+        public ActionResult Success()
+        {
+            return View();
         }
 
         // GET: ServiceRequests/Edit/5
