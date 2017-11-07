@@ -209,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Apis\GoogleMaps.cs" />
+    <Compile Include="Apis\MailGun.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ServiceRequestsController.cs" />
     <Compile Include="Controllers\TypesOfServicesController.cs" />
+    <Compile Include="Controllers\VacanciesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -343,6 +345,10 @@
     <Compile Include="Migrations\201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.Designer.cs">
       <DependentUpon>201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711071519099_Create vacancies model.cs" />
+    <Compile Include="Migrations\201711071519099_Create vacancies model.Designer.cs">
+      <DependentUpon>201711071519099_Create vacancies model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -353,6 +359,7 @@
     <Compile Include="Models\Resident.cs" />
     <Compile Include="Models\ServiceRequests.cs" />
     <Compile Include="Models\TypesOfService.cs" />
+    <Compile Include="Models\Vacancies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -469,6 +476,12 @@
     <Content Include="Views\Residents\Welcome.cshtml" />
     <Content Include="Views\Locations\Buildings.cshtml" />
     <Content Include="Views\ServiceRequests\Success.cshtml" />
+    <Content Include="Views\Vacancies\Create.cshtml" />
+    <Content Include="Views\Vacancies\Delete.cshtml" />
+    <Content Include="Views\Vacancies\Details.cshtml" />
+    <Content Include="Views\Vacancies\Edit.cshtml" />
+    <Content Include="Views\Vacancies\Index.cshtml" />
+    <Content Include="Views\Vacancies\ViewVacancies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -566,6 +579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.resx">
       <DependentUpon>201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071519099_Create vacancies model.resx">
+      <DependentUpon>201711071519099_Create vacancies model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
