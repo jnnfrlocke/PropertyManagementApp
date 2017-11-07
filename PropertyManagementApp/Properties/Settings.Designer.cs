@@ -31,5 +31,14 @@ namespace PropertyManagementApp.Properties {
                 return ((string)(this["GeoCodeApiKey"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("key-158011c7a1c26856d0366693f45ecf53")]
+        public string MailGunApiKey {
+            get {
+                return ((string)(this["MailGunApiKey"]));
+            }
+        }
     }
 }

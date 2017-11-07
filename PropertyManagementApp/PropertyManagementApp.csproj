@@ -494,6 +494,9 @@
     <Content Include="Views\Messages\Edit.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\SendToManager.cshtml" />
+    <Content Include="Views\Messages\MessageSuccess.cshtml" />
+    <Content Include="Views\Messages\SendMgrMessage.cshtml" />
+    <Content Include="Views\MailGun\SendToSingleEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
