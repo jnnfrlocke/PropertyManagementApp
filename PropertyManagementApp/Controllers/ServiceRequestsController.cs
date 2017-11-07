@@ -38,6 +38,10 @@ namespace PropertyManagementApp.Controllers
         // GET: ServiceRequests/Create
         public ActionResult Create()
         {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction()
+            }
             return View();
         }
 

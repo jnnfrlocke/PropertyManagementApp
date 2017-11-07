@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace PropertyManagementApp.Models
 {
@@ -23,11 +24,10 @@ namespace PropertyManagementApp.Models
 
         public string Urgency { get; set; }
 
-        [Display(Name ="Date Submitted")]
+        [Display(Name = "Date Submitted")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        
-        public DateTime? DateSubmitted { get; set; }
+        public string DateSubmitted { get; set; }
 
         [Display(Name ="Contractor Used")]
         public string ContractorUsed { get; set; }
@@ -37,10 +37,9 @@ namespace PropertyManagementApp.Models
 
         public bool Completed { get; set; }
 
-        [Display(Name ="Date Completed")]
+        [Display(Name = "Date Completed")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime DateCompleted { get; set; }
-        
+        public string DateCompleted { get; set; }
     }
 }

@@ -287,6 +287,62 @@
     <Compile Include="Migrations\201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.Designer.cs">
       <DependentUpon>201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711062106204_Remove data format in DateSubmitted in ServiceRequests.cs" />
+    <Compile Include="Migrations\201711062106204_Remove data format in DateSubmitted in ServiceRequests.Designer.cs">
+      <DependentUpon>201711062106204_Remove data format in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711062118359_Change data format in DateSubmitted in ServiceRequests.cs" />
+    <Compile Include="Migrations\201711062118359_Change data format in DateSubmitted in ServiceRequests.Designer.cs">
+      <DependentUpon>201711062118359_Change data format in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711062129164_Change DateSubmitted to nullable in ServiceRequests.cs" />
+    <Compile Include="Migrations\201711062129164_Change DateSubmitted to nullable in ServiceRequests.Designer.cs">
+      <DependentUpon>201711062129164_Change DateSubmitted to nullable in ServiceRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071329396_Reset ServiceRequests model..cs" />
+    <Compile Include="Migrations\201711071329396_Reset ServiceRequests model..Designer.cs">
+      <DependentUpon>201711071329396_Reset ServiceRequests model..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071357051_Set date to today in servicerequests.cs" />
+    <Compile Include="Migrations\201711071357051_Set date to today in servicerequests.Designer.cs">
+      <DependentUpon>201711071357051_Set date to today in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071407424_Update date in servicerequests.cs" />
+    <Compile Include="Migrations\201711071407424_Update date in servicerequests.Designer.cs">
+      <DependentUpon>201711071407424_Update date in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071410104_Update date getter in servicerequests.cs" />
+    <Compile Include="Migrations\201711071410104_Update date getter in servicerequests.Designer.cs">
+      <DependentUpon>201711071410104_Update date getter in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071413267_Reset datesubmitted to original in servicerequests.cs" />
+    <Compile Include="Migrations\201711071413267_Reset datesubmitted to original in servicerequests.Designer.cs">
+      <DependentUpon>201711071413267_Reset datesubmitted to original in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071421045_Change datesubmitted to datetime1 in servicerequests.cs" />
+    <Compile Include="Migrations\201711071421045_Change datesubmitted to datetime1 in servicerequests.Designer.cs">
+      <DependentUpon>201711071421045_Change datesubmitted to datetime1 in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071425263_Change datesubmitted to string in servicerequests.cs" />
+    <Compile Include="Migrations\201711071425263_Change datesubmitted to string in servicerequests.Designer.cs">
+      <DependentUpon>201711071425263_Change datesubmitted to string in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071429187_Change datesubmitted to string and removed datatype in servicerequests.cs" />
+    <Compile Include="Migrations\201711071429187_Change datesubmitted to string and removed datatype in servicerequests.Designer.cs">
+      <DependentUpon>201711071429187_Change datesubmitted to string and removed datatype in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071433093_Commented DateCompleted in servicerequests.cs" />
+    <Compile Include="Migrations\201711071433093_Commented DateCompleted in servicerequests.Designer.cs">
+      <DependentUpon>201711071433093_Commented DateCompleted in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071438327_Set DateSubmitted to datatype.date in servicerequests.cs" />
+    <Compile Include="Migrations\201711071438327_Set DateSubmitted to datatype.date in servicerequests.Designer.cs">
+      <DependentUpon>201711071438327_Set DateSubmitted to datatype.date in servicerequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.cs" />
+    <Compile Include="Migrations\201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.Designer.cs">
+      <DependentUpon>201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -467,6 +523,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.resx">
       <DependentUpon>201711062053456_Change data type in DateSubmitted in ServiceRequests to nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062106204_Remove data format in DateSubmitted in ServiceRequests.resx">
+      <DependentUpon>201711062106204_Remove data format in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062118359_Change data format in DateSubmitted in ServiceRequests.resx">
+      <DependentUpon>201711062118359_Change data format in DateSubmitted in ServiceRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711062129164_Change DateSubmitted to nullable in ServiceRequests.resx">
+      <DependentUpon>201711062129164_Change DateSubmitted to nullable in ServiceRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071329396_Reset ServiceRequests model..resx">
+      <DependentUpon>201711071329396_Reset ServiceRequests model..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071357051_Set date to today in servicerequests.resx">
+      <DependentUpon>201711071357051_Set date to today in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071407424_Update date in servicerequests.resx">
+      <DependentUpon>201711071407424_Update date in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071410104_Update date getter in servicerequests.resx">
+      <DependentUpon>201711071410104_Update date getter in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071413267_Reset datesubmitted to original in servicerequests.resx">
+      <DependentUpon>201711071413267_Reset datesubmitted to original in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071421045_Change datesubmitted to datetime1 in servicerequests.resx">
+      <DependentUpon>201711071421045_Change datesubmitted to datetime1 in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071425263_Change datesubmitted to string in servicerequests.resx">
+      <DependentUpon>201711071425263_Change datesubmitted to string in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071429187_Change datesubmitted to string and removed datatype in servicerequests.resx">
+      <DependentUpon>201711071429187_Change datesubmitted to string and removed datatype in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071433093_Commented DateCompleted in servicerequests.resx">
+      <DependentUpon>201711071433093_Commented DateCompleted in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071438327_Set DateSubmitted to datatype.date in servicerequests.resx">
+      <DependentUpon>201711071438327_Set DateSubmitted to datatype.date in servicerequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.resx">
+      <DependentUpon>201711071441251_Set DateCompleted to mirror DateSubmitted in servicerequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
