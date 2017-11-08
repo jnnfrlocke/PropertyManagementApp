@@ -17,6 +17,9 @@ namespace PropertyManagementApp.Models
         [Display(Name ="Name of Building")]
         public string Location { get; set; }
 
+        [Display(Name ="Your Unit")]
+        public string Unit { get; set; }
+
         [Display(Name ="Type of Service")]
         public string TypeOfService { get; set; }
 

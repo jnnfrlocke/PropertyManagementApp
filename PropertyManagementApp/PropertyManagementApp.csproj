@@ -359,6 +359,10 @@
     <Compile Include="Migrations\201711081508335_Update after send message from mgr to resident.Designer.cs">
       <DependentUpon>201711081508335_Update after send message from mgr to resident.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711081850377_Add unit to service requests model.cs" />
+    <Compile Include="Migrations\201711081850377_Add unit to service requests model.Designer.cs">
+      <DependentUpon>201711081850377_Add unit to service requests model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -611,6 +615,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711081508335_Update after send message from mgr to resident.resx">
       <DependentUpon>201711081508335_Update after send message from mgr to resident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081850377_Add unit to service requests model.resx">
+      <DependentUpon>201711081850377_Add unit to service requests model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PropertyManagementApp.Models;
+using PropertyManagementApp.Apis;
 
 namespace PropertyManagementApp.Controllers
 {
@@ -46,12 +47,16 @@ namespace PropertyManagementApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Location,TypeOfService,Details,Urgency,DateSubmitted,ContractorUsed,FollowUpNeeded,Completed,DateCompleted")] ServiceRequests serviceRequests)
+        public ActionResult Create([Bind(Include = "Id,Name,Location,Unit,TypeOfService,Details,Urgency,DateSubmitted,ContractorUsed,FollowUpNeeded,Completed,DateCompleted")] ServiceRequests serviceRequests)
         {
             if (ModelState.IsValid)
             {
                 db.ServiceRequests.Add(serviceRequests);
                 db.SaveChanges();
+                
+                MailGun managerMessage = new MailGun();
+                managerMessage.SendServiceRequest("hello@jenniferlocke.work", serviceRequests.Name, serviceRequests.Location, serviceRequests.Unit, serviceRequests.TypeOfService, serviceRequests.Details, serviceRequests.Urgency, serviceRequests.DateSubmitted);
+
                 return RedirectToAction("Success");
             }
 
