@@ -87,10 +87,139 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        // GET: Messages/SendFromMgrToResident
+        public ActionResult SendMessageFromManagerToResident()
+        {
+            //Messages model = new Messages();
+            return View();
+        }
+
+        // POST: Messages/SendFromMgrToResident
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SendMessageFromManagerToResident([Bind(Include = "Id,Resident,BuildingName,Unit,Subject,Body")] Messages messages)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Messages.Add(messages);
+                db.SaveChanges();
+
+                string residentEmail = null;
+
+                var residentEmailQuery = from rm in db.Residents
+                                    where (rm.Name == messages.Resident)
+                                    select rm.EmailAddress;
+                
+                foreach (string result in residentEmailQuery)
+                {
+                    residentEmail = result;
+                }
+
+                MailGun managerMessageToResident = new MailGun();
+                managerMessageToResident.SendFromMgrToResident(residentEmail, messages.Subject, messages.Body, messages.Resident);
+
+                return RedirectToAction("MessageSuccess");
+            }
+
+            return View(messages);
+        }
+
+        // GET: Messages/SendFromMgrToBuilding
+        public ActionResult SendFromManagerToBuilding()
+        {
+            //Messages model = new Messages();
+            return View();
+        }
+
+        // POST: Messages/SendFromMgrToBuilding
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SendFromManagerToBuilding([Bind(Include = "Id,Resident,BuildingName,Unit,Subject,Body")] Messages messages)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Messages.Add(messages);
+                db.SaveChanges();
+
+                string residentEmail = null;
+
+                var buildingQuery = from rm in db.Residents
+                                         where (rm.Location == messages.BuildingName)
+                                         select rm.EmailAddress;
+
+                foreach (string result in buildingQuery)
+                {
+                    residentEmail = result;
+                    MailGun managerMessageToResident = new MailGun();
+                    managerMessageToResident.SendFromMgrToBuilding(residentEmail, messages.Subject, messages.Body, messages.BuildingName);
+                }
+
+                return RedirectToAction("MessageSuccess");
+            }
+
+            return View(messages);
+        }
+
         public ActionResult MessageSuccess()
         {
             return View();
         }
+
+
+        // GET: Messages/SendFromResidentToResidentt
+        public ActionResult SendFromResidentToResident()
+        {
+            //Messages model = new Messages();
+            return View();
+        }
+
+        // POST: Messages/SendFromResidentToResident
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SendFromResidentToResident([Bind(Include = "Id,Resident,BuildingName,Unit,Subject,Body,RecipientsUnit")] Messages messages)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Messages.Add(messages);
+                db.SaveChanges();
+
+                string residentEmail = null;
+                string sendersEmail = null;
+
+                var residentEmailQuery = from rm in db.Residents
+                                         where ((rm.Unit == messages.RecipientsUnit) && (rm.Location == messages.BuildingName))
+                                         select rm.EmailAddress;
+                
+                foreach (string result in residentEmailQuery)
+                {
+                    residentEmail = result;
+                }
+                
+                var sendersEmailQuery = from se in db.Residents
+                                        where ((se.Unit == messages.Unit) && (se.Location == messages.BuildingName))
+                                        select se.EmailAddress;
+                foreach (string result in sendersEmailQuery)
+                {
+                    sendersEmail = result;
+                }
+
+                MailGun managerMessageToResident = new MailGun();
+                managerMessageToResident.SendFromResidentToResident(residentEmail, messages.Subject, messages.Body, messages.Resident, messages.BuildingName, messages.Unit, sendersEmail);
+
+
+                return RedirectToAction("MessageSuccess");
+            }
+
+            return View(messages);
+        }
+
+
 
         // GET: Messages/Edit/5
         public ActionResult Edit(int? id)

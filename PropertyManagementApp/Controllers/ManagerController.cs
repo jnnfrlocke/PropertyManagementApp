@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyManagementApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,16 @@ namespace PropertyManagementApp.Controllers
 {
     public class ManagerController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Manager
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult EmailSelector()
+        {
+            return View(db.Residents.ToList());
         }
 
         // GET: Manager/Details/5

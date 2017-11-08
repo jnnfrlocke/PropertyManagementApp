@@ -355,6 +355,10 @@
     <Compile Include="Migrations\201711071905013_Add messages controller.Designer.cs">
       <DependentUpon>201711071905013_Add messages controller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711081508335_Update after send message from mgr to resident.cs" />
+    <Compile Include="Migrations\201711081508335_Update after send message from mgr to resident.Designer.cs">
+      <DependentUpon>201711081508335_Update after send message from mgr to resident.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -496,8 +500,11 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\SendToManager.cshtml" />
     <Content Include="Views\Messages\MessageSuccess.cshtml" />
-    <Content Include="Views\Messages\SendMgrMessage.cshtml" />
     <Content Include="Views\MailGun\SendToSingleEmail.cshtml" />
+    <Content Include="Views\Messages\SendMessageFromManagerToResident.cshtml" />
+    <Content Include="Views\Messages\SendFromManagerToBuilding.cshtml" />
+    <Content Include="Views\Messages\SendFromResidentToResident.cshtml" />
+    <Content Include="Views\Messages\SendFromResidentToBuilding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -601,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071905013_Add messages controller.resx">
       <DependentUpon>201711071905013_Add messages controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081508335_Update after send message from mgr to resident.resx">
+      <DependentUpon>201711081508335_Update after send message from mgr to resident.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

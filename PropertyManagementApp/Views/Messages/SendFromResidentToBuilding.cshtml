@@ -1,11 +1,11 @@
 ﻿@model PropertyManagementApp.Models.Messages
 
 @{
-    ViewBag.Title = "SendToManager";
+    ViewBag.Title = "SendFromResidentToBuilding";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Send a Message to the Manager</h2>
+<h2>SendFromResidentToBuilding</h2>
 
 @using (Html.BeginForm())
 {
@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.Label("Your Name", htmlAttributes: new { @class = "control-label col-md-2"})
+            @Html.Label("Your Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Resident, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Resident, "", new { @class = "text-danger" })
@@ -32,9 +32,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Unit, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Your Unit", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor( model => model.Unit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Unit, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -60,5 +60,6 @@
                 <input type="submit" value="Send Message" class="btn btn-default" />
             </div>
         </div>
-        </div>
+    </div>
 }
+
