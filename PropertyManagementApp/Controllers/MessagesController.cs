@@ -221,6 +221,46 @@ namespace PropertyManagementApp.Controllers
 
 
 
+        // GET: Messages/SendFromResidentToBuilding
+        public ActionResult SendFromResidentToBuilding()
+        {
+            //Messages model = new Messages();
+            return View();
+        }
+
+        // POST: Messages/SendFromResidentToBuilding
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SendFromResidentToBuilding([Bind(Include = "Id,Resident,BuildingName,Unit,Subject,Body")] Messages messages)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Messages.Add(messages);
+                db.SaveChanges();
+
+                string residentEmail = null;
+
+                var residentEmailQuery = from rm in db.Residents
+                                         where (rm.Location == messages.BuildingName)
+                                         select rm.EmailAddress;
+
+                foreach (string result in residentEmailQuery)
+                {
+                    residentEmail = result;
+                    MailGun managerMessageToResident = new MailGun();
+                    managerMessageToResident.SendFromResidentToBuilding(residentEmail, messages.Subject, messages.Body, messages.BuildingName, messages.Resident, messages.Unit);
+                }
+
+                return RedirectToAction("MessageSuccess");
+            }
+
+            return View(messages);
+        }
+
+
+
         // GET: Messages/Edit/5
         public ActionResult Edit(int? id)
         {
