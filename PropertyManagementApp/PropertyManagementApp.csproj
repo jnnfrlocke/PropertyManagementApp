@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44314</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -113,8 +113,11 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.0.0\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.0.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.0.1\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -210,6 +213,7 @@
   <ItemGroup>
     <Compile Include="Apis\GoogleMaps.cs" />
     <Compile Include="Apis\MailGun.cs" />
+    <Compile Include="Apis\PayPal.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -403,6 +407,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\PropertyManagementApp20171108013922 - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -504,14 +509,15 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\SendToManager.cshtml" />
     <Content Include="Views\Messages\MessageSuccess.cshtml" />
-    <Content Include="Views\MailGun\SendToSingleEmail.cshtml" />
     <Content Include="Views\Messages\SendMessageFromManagerToResident.cshtml" />
     <Content Include="Views\Messages\SendFromManagerToBuilding.cshtml" />
     <Content Include="Views\Messages\SendFromResidentToResident.cshtml" />
     <Content Include="Views\Messages\SendFromResidentToBuilding.cshtml" />
+    <Content Include="Views\Residents\PayRent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MailGun\" />
     <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
@@ -638,7 +644,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2040</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2040/</IISUrl>
+          <IISUrl>https://localhost:44314/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

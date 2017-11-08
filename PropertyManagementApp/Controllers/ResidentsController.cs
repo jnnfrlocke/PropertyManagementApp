@@ -24,6 +24,11 @@ namespace PropertyManagementApp.Controllers
         {
             return View();
         }
+        
+        public ActionResult PayRent()
+        {
+            return View();
+        }
 
         // GET: Residents/Details/5
         public ActionResult Details(int? id)

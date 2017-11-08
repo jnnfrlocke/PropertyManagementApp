@@ -25,7 +25,7 @@ namespace PropertyManagementApp.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("AIzaSyDBQ0bI2v5FnfmC4o7RgWX9af9u03U-PDU\t")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string GeoCodeApiKey {
             get {
                 return ((string)(this["GeoCodeApiKey"]));
@@ -34,7 +34,7 @@ namespace PropertyManagementApp.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("key-158011c7a1c26856d0366693f45ecf53")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string MailGunApiKey {
             get {
                 return ((string)(this["MailGunApiKey"]));

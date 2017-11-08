@@ -12,8 +12,8 @@
         <div class="col-md-6 table-bordered">
             <h4><a href="~/ServiceRequests/Create">Submit a Service Request</a></h4>
         </div>
-        <div class="col-md-6 table-bordered">
-            <h4>Pay Rent</h4>
+        <div class="col-md-6 table-bordered">@* paypal link *@
+            <h4><a href="PayRent">Pay Rent</a></h4>
         </div>
     </div>
     <div class="row">
@@ -28,24 +28,3 @@
         </div>
     </div>
 </div>
-
-
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-
-    </table>*@
