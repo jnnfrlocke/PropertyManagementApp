@@ -20,9 +20,6 @@ namespace PropertyManagementApp.Apis
 
         public IRestResponse SendToSingleEmail(string email, string subject, string body, string from, string unit, string building)
         {
-            //string email = "jen@jllocke.com"; // may need to send this in as a parameter
-            //string subject = "Email subject";
-            //string body = "This is the body";
             string sender = "Mailgun Sandbox <postmaster@sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org>";
 
             RestClient client = new RestClient();

@@ -227,6 +227,7 @@
     <Compile Include="Controllers\ServiceRequestsController.cs" />
     <Compile Include="Controllers\TypesOfServicesController.cs" />
     <Compile Include="Controllers\VacanciesController.cs" />
+    <Compile Include="Credentials.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
