@@ -14,10 +14,6 @@ namespace PropertyManagementApp.Apis
         {
         }
 
-        private string _mailGunApiKey = Properties.Settings.Default.MailGunApiKey;
-
-        public string MailGunApiKey => _mailGunApiKey;
-
         public IRestResponse SendToSingleEmail(string email, string subject, string body, string from, string unit, string building)
         {
             string sender = "Mailgun Sandbox <postmaster@sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org>";
@@ -25,7 +21,7 @@ namespace PropertyManagementApp.Apis
             RestClient client = new RestClient();
             client.BaseUrl = new Uri("https://api.mailgun.net/v3");
             client.Authenticator =
-                new HttpBasicAuthenticator("api", MailGunApiKey);
+                new HttpBasicAuthenticator("api", Credentials.MailGunApiKey);
             RestRequest request = new RestRequest();
             request.AddParameter("domain", "sandbox42d69fe14b4c419d8b540852c478490b.mailgun.org", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";

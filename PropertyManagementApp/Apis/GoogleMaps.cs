@@ -13,15 +13,11 @@ namespace PropertyManagementApp.Apis
         public GoogleMaps()
         {
         }
-
-        private string _geocodeApiKey = Properties.Settings.Default.GeoCodeApiKey;
-
-        public string GeocodeApiKey => _geocodeApiKey;
         
         public object GetQueryUrl()
         {
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode";
-            string jsonQuery = $"/json?address=2221+W+Kendall+Ave,+Glendale,+WI&key={GeocodeApiKey}";
+            string jsonQuery = $"/json?address=2221+W+Kendall+Ave,+Glendale,+WI&key={Credentials.GeoCodeApiKey}";
             string formattedUrl = baseUrl + jsonQuery;
             string coordinates = GetLatLong(formattedUrl);
             // TODO: This should be a new method - doin something new
