@@ -21,5 +21,11 @@ namespace PropertyManagementApp.Models
         [EmailAddress]
         [Display(Name ="Email Address")]
         public string EmailAddress { get; set; }
+
+        [Display(Name ="Rent in US Dollars")]
+        public int Rent { get; set; }
+
+        [Display(Name = "Payment in US Dollars")]
+        public int Payment { get; set; }
     }
 }

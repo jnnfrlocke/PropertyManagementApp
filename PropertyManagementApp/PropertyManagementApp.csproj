@@ -225,6 +225,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\PayPalController.cs" />
     <Compile Include="Controllers\PreferredServiceProvidersController.cs" />
     <Compile Include="Controllers\ResidentsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
@@ -366,6 +367,10 @@
     <Compile Include="Migrations\201711081850377_Add unit to service requests model.cs" />
     <Compile Include="Migrations\201711081850377_Add unit to service requests model.Designer.cs">
       <DependentUpon>201711081850377_Add unit to service requests model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711082144529_Add rent and payment to resident model.cs" />
+    <Compile Include="Migrations\201711082144529_Add rent and payment to resident model.Designer.cs">
+      <DependentUpon>201711082144529_Add rent and payment to resident model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -518,6 +523,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\MailGun\" />
+    <Folder Include="Views\PayPal\" />
     <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
@@ -624,6 +630,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711081850377_Add unit to service requests model.resx">
       <DependentUpon>201711081850377_Add unit to service requests model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711082144529_Add rent and payment to resident model.resx">
+      <DependentUpon>201711082144529_Add rent and payment to resident model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
