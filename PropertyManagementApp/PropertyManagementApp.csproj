@@ -213,7 +213,6 @@
   <ItemGroup>
     <Compile Include="Apis\GoogleMaps.cs" />
     <Compile Include="Apis\MailGun.cs" />
-    <Compile Include="Apis\PayPal.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
