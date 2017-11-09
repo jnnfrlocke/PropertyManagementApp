@@ -27,7 +27,7 @@ namespace PropertyManagementApp.Controllers
         
         public ActionResult PayRent()
         {
-            return View();
+            return View(db.Residents.ToList());
         }
 
         // GET: Residents/Details/5

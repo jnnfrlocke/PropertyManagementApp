@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using RestSharp;
 using PropertyManagementApp.Apis;
+using Stripe;
 
 namespace PropertyManagementApp.Controllers
 {
@@ -14,6 +15,43 @@ namespace PropertyManagementApp.Controllers
         {
             return View();
         }
+
+        //Stripe charge
+        // Using ActionResult instead of IActionResult like the docs say to
+        // Using PayRent instead of Index
+        public ActionResult Error()
+        {
+            return View();
+        }
+        public ActionResult PayRent(string stripeEmail, string stripeId)
+        {
+            var customers = new StripeCustomerService();
+            var charges = new StripeChargeService();
+
+            var customer = customers.Create(new StripeCustomerCreateOptions
+            {
+                Email = stripeEmail,
+                SourceToken = stripeId
+            });
+
+            var charge = charges.Create(new StripeChargeCreateOptions
+            {
+                Amount = 500,// this charges $5.00
+                Description = "Payment Amount",
+                Currency = "usd",
+                CustomerId = customer.Id,
+                ReceiptEmail = customer.Email
+            });
+
+            return View();
+        }
+
+        public ActionResult Charge()
+        {
+            return View();
+        }
+        // End Stripe
+
 
         public ActionResult Maps()
         {
@@ -38,4 +76,6 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
     }
+
+    
 }

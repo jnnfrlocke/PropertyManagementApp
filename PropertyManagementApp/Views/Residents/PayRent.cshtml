@@ -1,9 +1,74 @@
-﻿@model PropertyManagementApp.Models.Resident
+﻿@*@model PropertyManagementApp.Models.Resident*@
+@model IEnumerable<PropertyManagementApp.Models.Resident>
+@*@inject IOptions<StripeSettings> Stripe*@
 
 @{
     ViewBag.Title = "Pay Rent";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h2>Payment</h2>
-    
+<h2>Please Verify that this information is correct.</h2>
+
+<h4>If correct, click "Pay With Card" to continue with your payment<br />
+    If incorrect, please @Html.ActionLink("click here", "SendToManager", "Messages") to contact your building's manager to update it.</h4>
+<br />
+
+<table class="table">
+    @*Make sure to pass value for currently logged in user*@
+   
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th></th>
+        </tr>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+       </tr>
+    }
+    </table>
+
+        <h2>Payment</h2>
+        <form action="/Home/PayRent" method="POST">
+            <article>
+                <label>Amount: $5.00</label>
+                @*<label_tag(:amount, :'Payment:')>
+                <text_field_tag(:amount)>*@
+            </article>
+            <script src="//checkout.stripe.com/v2/checkout.js"
+                    class="stripe-button"
+                    data-key="@Credentials.StripePublishableKey"
+                    data-locale="auto"
+                    data-description="Sample Charge"
+                    data-amount="500">
+            </script>
+        </form>
+
