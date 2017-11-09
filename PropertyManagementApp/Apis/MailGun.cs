@@ -129,6 +129,25 @@ namespace PropertyManagementApp.Apis
             return client.Execute(request);
         }
 
+        public IRestResponse SendAvailableUnitRequest(string name, string emailAddress, string subject, string body)
+        {
+            string sender = $"{name} {emailAddress}";
+
+            RestClient client = new RestClient();
+            client.BaseUrl = new Uri("https://api.mailgun.net/v3");
+            client.Authenticator =
+                new HttpBasicAuthenticator("api", Credentials.MailGunApiKey);
+            RestRequest request = new RestRequest();
+            request.AddParameter("domain", "mg.jenniferlocke.work", ParameterType.UrlSegment);
+            request.Resource = "{domain}/messages";
+            request.AddParameter("from", sender);
+            request.AddParameter("to", "hello@jenniferlocke.work");
+            request.AddParameter("subject", subject);
+            request.AddParameter("text", body);
+            request.Method = Method.POST;
+            return client.Execute(request);
+        }
+
         // You can see a record of this email in your logs: https://mailgun.com/app/logs .
 
         // You can send up to 300 emails/day from this sandbox server.

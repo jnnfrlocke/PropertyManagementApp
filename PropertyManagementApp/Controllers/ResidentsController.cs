@@ -14,6 +14,7 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
         // GET: Residents
         public ActionResult Index()
         {
@@ -98,6 +99,44 @@ namespace PropertyManagementApp.Controllers
             }
             return View(resident);
         }
+
+
+        // GET: Residents/EnterPaymentAmount
+        public ActionResult EnterPaymentAmount(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Resident resident = db.Residents.Find(id);
+            if (resident == null)
+            {
+                return HttpNotFound();
+            }
+            return View(resident);
+        }
+
+        // POST: Residents/EnterPaymentAmount
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnterPaymentAmount([Bind(Include = "Id,Name,Location,Unit,EmailAddress,Rent,Payment")] Resident resident)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(resident).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("MakePayment");
+            }
+            return View(resident);
+        }
+
+        public ActionResult MakePayment(Resident resident)
+        {
+            return View(resident);
+        }
+
 
         // GET: Residents/Delete/5
         public ActionResult Delete(int? id)

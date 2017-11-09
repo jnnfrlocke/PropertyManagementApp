@@ -9,10 +9,14 @@
 
 <h2>Please Verify that this information is correct.</h2>
 
-<h4>If correct, click "Pay With Card" to continue with your payment<br />
+@* If correct go to EnterPaymentAmount *@
+<h4>If correct, @Html.ActionLink("click here", "EnterPaymentAmount") to enter your payment amount.<br />
     If incorrect, please @Html.ActionLink("click here", "SendToManager", "Messages") to contact your building's manager to update it.</h4>
 <br />
 
+
+@using (Html.BeginForm("PayRent", "Residents"))
+{
 <table class="table">
     @*Make sure to pass value for currently logged in user*@
    
@@ -29,7 +33,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Rent)
             </th>
-            <th>
+           <th>
                 @Html.DisplayNameFor(model => model.EmailAddress)
             </th>
             <th></th>
@@ -53,15 +57,23 @@
                 @Html.DisplayFor(modelItem => item.EmailAddress)
             </td>
        </tr>
-    }
+}
     </table>
+}
+
+@*<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Set Payment" class="btn btn-default" />
+    </div>
+</div>
+}
 
         <h2>Payment</h2>
         <form action="/Home/PayRent" method="POST">
             <article>
                 <label>Amount: $5.00</label>
                 @*<label_tag(:amount, :'Payment:')>
-                <text_field_tag(:amount)>*@
+                <text_field_tag(:amount)>
             </article>
             <script src="//checkout.stripe.com/v2/checkout.js"
                     class="stripe-button"
@@ -70,5 +82,5 @@
                     data-description="Sample Charge"
                     data-amount="500">
             </script>
-        </form>
+        </form>*@
 

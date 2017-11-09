@@ -23,7 +23,7 @@ namespace PropertyManagementApp.Controllers
         {
             return View();
         }
-        public ActionResult PayRent(string stripeEmail, string stripeId)
+        public ActionResult PayRent(string stripeEmail, string stripeId, int? pmtAmount)
         {
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
@@ -31,12 +31,12 @@ namespace PropertyManagementApp.Controllers
             var customer = customers.Create(new StripeCustomerCreateOptions
             {
                 Email = stripeEmail,
-                SourceToken = stripeId
+                SourceToken = stripeId,
             });
 
             var charge = charges.Create(new StripeChargeCreateOptions
             {
-                Amount = 500,// this charges $5.00
+                Amount = pmtAmount,// 500 charges $5.00
                 Description = "Payment Amount",
                 Currency = "usd",
                 CustomerId = customer.Id,

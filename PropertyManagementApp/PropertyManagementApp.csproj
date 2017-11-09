@@ -240,6 +240,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AvailableUnitInfoRequestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -392,8 +393,17 @@
     <Compile Include="Migrations\201711082144529_Add rent and payment to resident model.Designer.cs">
       <DependentUpon>201711082144529_Add rent and payment to resident model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711092020074_Add availableUnitninforequests.cs" />
+    <Compile Include="Migrations\201711092020074_Add availableUnitninforequests.Designer.cs">
+      <DependentUpon>201711092020074_Add availableUnitninforequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711092023187_just kidding, really add availableUnitninforequests.cs" />
+    <Compile Include="Migrations\201711092023187_just kidding, really add availableUnitninforequests.Designer.cs">
+      <DependentUpon>201711092023187_just kidding, really add availableUnitninforequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AvailableUnitInfoRequests.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Locations.cs" />
     <Compile Include="Models\Manager.cs" />
@@ -541,6 +551,13 @@
     <Content Include="Views\Residents\PayRent.cshtml" />
     <Content Include="Views\Home\Charge.cshtml" />
     <Content Include="Views\Home\PayRent.cshtml" />
+    <Content Include="Views\Residents\EnterPaymentAmount.cshtml" />
+    <Content Include="Views\Residents\MakePayment.cshtml" />
+    <Content Include="Views\AvailableUnitInfoRequests\Create.cshtml" />
+    <Content Include="Views\AvailableUnitInfoRequests\Delete.cshtml" />
+    <Content Include="Views\AvailableUnitInfoRequests\Details.cshtml" />
+    <Content Include="Views\AvailableUnitInfoRequests\Edit.cshtml" />
+    <Content Include="Views\AvailableUnitInfoRequests\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -655,6 +672,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711082144529_Add rent and payment to resident model.resx">
       <DependentUpon>201711082144529_Add rent and payment to resident model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092020074_Add availableUnitninforequests.resx">
+      <DependentUpon>201711092020074_Add availableUnitninforequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092023187_just kidding, really add availableUnitninforequests.resx">
+      <DependentUpon>201711092023187_just kidding, really add availableUnitninforequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
