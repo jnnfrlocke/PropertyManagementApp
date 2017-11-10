@@ -427,6 +427,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -558,12 +559,13 @@
     <Content Include="Views\AvailableUnitInfoRequests\Details.cshtml" />
     <Content Include="Views\AvailableUnitInfoRequests\Edit.cshtml" />
     <Content Include="Views\AvailableUnitInfoRequests\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\MailGun\" />
     <Folder Include="Views\PayPal\" />
-    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

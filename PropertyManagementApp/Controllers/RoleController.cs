@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-
-using PropertyManagementApp.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PropertyManagementApp.Models;
 
-namespace PropertyManagementApp.Controllers
+namespace A11_RBS.Controllers
 {
     public class RoleController : Controller
     {
@@ -35,7 +34,5 @@ namespace PropertyManagementApp.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
     }
 }

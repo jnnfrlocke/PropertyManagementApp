@@ -64,6 +64,9 @@ namespace PropertyManagementApp.Models
 
     public class RegisterViewModel
     {
+        // Added 11/9/2017 for roles
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
