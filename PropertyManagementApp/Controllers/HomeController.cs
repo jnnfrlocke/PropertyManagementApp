@@ -23,6 +23,9 @@ namespace PropertyManagementApp.Controllers
         {
             return View();
         }
+
+
+        [Authorize(Roles = "Resident")]
         public ActionResult PayRent(string stripeEmail, string stripeId, int? pmtAmount)
         {
             var customers = new StripeCustomerService();
@@ -45,18 +48,18 @@ namespace PropertyManagementApp.Controllers
 
             return View();
         }
-
+        
+        [Authorize(Roles = "Resident")]
         public ActionResult Charge()
         {
             return View();
         }
         // End Stripe
-
-
+        
         public ActionResult Maps()
         {
-            //GoogleMaps newMap = new GoogleMaps();
-            //string coordinates = newMap.GetQueryUrl();
+            GoogleMaps newMap = new GoogleMaps();
+            newMap.GetFormattedUrl();
 
 
             return View();

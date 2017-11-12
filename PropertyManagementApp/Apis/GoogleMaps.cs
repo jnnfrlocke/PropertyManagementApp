@@ -5,6 +5,7 @@ using System.Web;
 using RestSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Google.Apis;
 
 namespace PropertyManagementApp.Apis
 {
@@ -13,21 +14,36 @@ namespace PropertyManagementApp.Apis
         public GoogleMaps()
         {
         }
-        
-        public object GetQueryUrl()
+
+        public string[] GetVacantFormattedUrl(string streetNumber, string streetName, string city, string state, int zip)
+        {
+            string baseUrl = "https://maps.googleapis.com/maps/api/geocode";
+            string jsonQuery = $"/json?address={streetNumber}+{streetName}+{city}+{state}+{zip}&key={Credentials.GeoCodeApiKey}";
+            string formattedUrl = baseUrl + jsonQuery;
+            var results = ParseLatLong(formattedUrl);
+            return results;
+        }
+
+        public void GetFormattedUrl()
         {
             string baseUrl = "https://maps.googleapis.com/maps/api/geocode";
             string jsonQuery = $"/json?address=2221+W+Kendall+Ave,+Glendale,+WI&key={Credentials.GeoCodeApiKey}";
             string formattedUrl = baseUrl + jsonQuery;
-            string coordinates = GetLatLong(formattedUrl);
-            // TODO: This should be a new method - doin something new
-            var jsonCoordinates = JsonConvert.DeserializeObject(coordinates);
-
-            return jsonCoordinates;
+            ParseLatLong(formattedUrl);
         }
 
-        public string GetLatLong(string url)
+        public string[] ParseLatLong(string formattedUrl)
         {
+            Rootobject resObj = GetLatLong(formattedUrl);
+            string lat = resObj.results[0].geometry.location.lat.ToString();
+            string lng = resObj.results[0].geometry.location.lng.ToString();
+            string[] resultStringArray = new string[] { lat, lng };
+            return resultStringArray;
+        }
+
+        public Rootobject GetLatLong(string url)
+        {
+            List<string> resList = new List<string>();
             // Create Rest client
             var client = new RestClient(url);
 
@@ -43,12 +59,65 @@ namespace PropertyManagementApp.Apis
 
             //return response
             string content = response.Content;
-
-            return content;
+            Rootobject mapdata = JsonConvert.DeserializeObject<Rootobject>(content);
+            return mapdata;
         }
-        
 
-        //public 
+        public void CreateMap()
+        {
 
+        }
+
+        public class Rootobject
+        {
+            public Result[] results { get; set; }
+            public string status { get; set; }
+        }
+        public class Result
+        {
+            public Address_Components[] address_components { get; set; }
+            public string formatted_address { get; set; }
+            public Geometry geometry { get; set; }
+            public string place_id { get; set; }
+            public string[] types { get; set; }
+        }
+
+        public class Geometry
+        {
+            public Location location { get; set; }
+            public string location_type { get; set; }
+            public Viewport viewport { get; set; }
+        }
+
+        public class Location
+        {
+            public float lat { get; set; }
+            public float lng { get; set; }
+        }
+
+        public class Viewport
+        {
+            public Northeast northeast { get; set; }
+            public Southwest southwest { get; set; }
+        }
+
+        public class Northeast
+        {
+            public float lat { get; set; }
+            public float lng { get; set; }
+        }
+
+        public class Southwest
+        {
+            public float lat { get; set; }
+            public float lng { get; set; }
+        }
+
+        public class Address_Components
+        {
+            public string long_name { get; set; }
+            public string short_name { get; set; }
+            public string[] types { get; set; }
+        }
     }
 }

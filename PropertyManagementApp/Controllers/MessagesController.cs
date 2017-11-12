@@ -15,12 +15,14 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages
         public ActionResult Index()
         {
             return View(db.Messages.ToList());
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,12 +38,14 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Messages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +63,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Resident")]
         // GET: Messages/SendToManager
         public ActionResult SendToManager()
         {
@@ -66,6 +71,7 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Resident")]
         // POST: Messages/SendToManager
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -87,6 +93,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages/SendFromMgrToResident
         public ActionResult SendMessageFromManagerToResident()
         {
@@ -94,6 +101,7 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Messages/SendFromMgrToResident
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -126,6 +134,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages/SendFromMgrToBuilding
         public ActionResult SendFromManagerToBuilding()
         {
@@ -133,6 +142,7 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Messages/SendFromMgrToBuilding
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -170,6 +180,7 @@ namespace PropertyManagementApp.Controllers
         }
 
 
+        [Authorize(Roles = "Resident")]
         // GET: Messages/SendFromResidentToResidentt
         public ActionResult SendFromResidentToResident()
         {
@@ -177,6 +188,7 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Resident")]
         // POST: Messages/SendFromResidentToResident
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -218,9 +230,8 @@ namespace PropertyManagementApp.Controllers
 
             return View(messages);
         }
-
-
-
+        
+        [Authorize(Roles = "Resident")]
         // GET: Messages/SendFromResidentToBuilding
         public ActionResult SendFromResidentToBuilding()
         {
@@ -228,6 +239,7 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Resident")]
         // POST: Messages/SendFromResidentToBuilding
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -258,9 +270,8 @@ namespace PropertyManagementApp.Controllers
 
             return View(messages);
         }
-
-
-
+        
+        [Authorize(Roles = "Manager")]
         // GET: Messages/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -276,6 +287,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Messages/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -292,6 +304,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Messages/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -307,6 +320,7 @@ namespace PropertyManagementApp.Controllers
             return View(messages);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Messages/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -14,6 +14,8 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
+        [Authorize(Roles = "Manager")]
         // GET: Locations
         public ActionResult Index()
         {
@@ -25,6 +27,8 @@ namespace PropertyManagementApp.Controllers
             return View(db.Locations.ToList());
         }
 
+
+        [Authorize(Roles = "Manager")]
         // GET: Locations/Details/5
         public ActionResult Details(int? id)
         {
@@ -40,6 +44,8 @@ namespace PropertyManagementApp.Controllers
             return View(locations);
         }
 
+
+        [Authorize(Roles = "Manager")]
         // GET: Locations/Create
         public ActionResult Create()
         {
@@ -49,6 +55,7 @@ namespace PropertyManagementApp.Controllers
         // POST: Locations/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Manager")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,StreetNumber,StreetName,City,State,ZipCode,PhoneNumber,Lat,Long")] Locations locations)
@@ -62,7 +69,8 @@ namespace PropertyManagementApp.Controllers
 
             return View(locations);
         }
-
+        
+        [Authorize(Roles = "Manager")]
         // GET: Locations/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -78,6 +86,7 @@ namespace PropertyManagementApp.Controllers
             return View(locations);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Locations/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -94,6 +103,7 @@ namespace PropertyManagementApp.Controllers
             return View(locations);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Locations/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -109,6 +119,7 @@ namespace PropertyManagementApp.Controllers
             return View(locations);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Locations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -11,28 +11,33 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Manager
+        [Authorize(Roles ="Manager")]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         public ActionResult EmailSelector()
         {
             return View(db.Residents.ToList());
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Manager/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Manager/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Manager/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -49,12 +54,14 @@ namespace PropertyManagementApp.Controllers
             }
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Manager/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Manager/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -71,12 +78,14 @@ namespace PropertyManagementApp.Controllers
             }
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: Manager/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: Manager/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

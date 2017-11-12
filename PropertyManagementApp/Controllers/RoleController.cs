@@ -14,19 +14,22 @@ namespace A11_RBS.Controllers
         {
             context = new ApplicationDbContext();
         }
-        
+
+        [Authorize(Roles = "Manager")]
         public ActionResult Index()
         {
             var Roles = context.Roles.ToList();
             return View(Roles);
         }
-        
+
+        [Authorize(Roles = "Manager")]
         public ActionResult Create()
         {
             var Role = new IdentityRole();
             return View(Role);
         }
-        
+
+        [Authorize(Roles = "Manager")]
         [HttpPost]
         public ActionResult Create(IdentityRole Role)
         {

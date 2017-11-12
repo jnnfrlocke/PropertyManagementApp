@@ -32,8 +32,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.PhoneNumber)
         </td>
-        <td>
-            @Html.ActionLink("See On Map", "Maps", "Home") | 
+        <td>          
+            @Html.ActionLink("See On Map", "Maps", new { id = item.Id }) |
             @Html.ActionLink("Email the Manager about a Unit", "Create", "AvailableUnitInfoRequests")
         </td>
     </tr>

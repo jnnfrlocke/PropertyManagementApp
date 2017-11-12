@@ -10,6 +10,7 @@ using PropertyManagementApp.Models;
 
 namespace PropertyManagementApp.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class TypesOfServicesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

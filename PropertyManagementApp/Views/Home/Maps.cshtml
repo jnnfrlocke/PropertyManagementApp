@@ -47,12 +47,16 @@
         // a sample list of JSON encoded data of places 
         // you can either make up a JSON list server side, or call it from a controller using JSONResult
         var data = [
-            { "Id": 1, "PlaceName": "Mitchell On Water", "GeoLong": "43.0330517", "GeoLat": "-87.9088048" },
             {
-                "Id": 2, "PlaceName": "DoMUS Apartments", "GeoLong": "43.0291769", "GeoLat": "-87.90456449999999" },
-            { "Id": 3, "PlaceName": "Pritzlaff Lofts",/* TODO: Customize appearance of popup "Address":"313 N Plankinton Ave\nMilwaukee, WI 53203",*/ "GeoLong": "43.0342677", "GeoLat": "-87.9114481" },
-                  //{ "Id": 4, "PlaceName": "", "GeoLong": "34.745159", "GeoLat": "10.7613" }
-               ];
+                "Id": 1, "PlaceName": "Mitchell On Water", "GeoLat": "43.0330517", "GeoLong": "-87.9088048"
+            },
+            {
+                "Id": 2, "PlaceName": "DoMUS Apartments", "GeoLat": "43.0291769", "GeoLong": "-87.90456449999999"
+            },
+            {
+                "Id": 3, "PlaceName": "Pritzlaff Lofts",/* TODO: Customize appearance of popup "Address":"313 N Plankinton Ave\nMilwaukee, WI 53203",*/ "GeoLat": "43.0342677", "GeoLong": "-87.9114481"
+            },
+        ];
 
         // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
         $.each(data, function (i, item) {

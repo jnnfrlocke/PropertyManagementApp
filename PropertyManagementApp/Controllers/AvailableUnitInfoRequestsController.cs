@@ -15,12 +15,14 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Authorize(Roles = "Manager")]
         // GET: AvailableUnitInfoRequests
         public ActionResult Index()
         {
             return View(db.AvailableUnitInfoRequests.ToList());
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: AvailableUnitInfoRequests/Details/5
         public ActionResult Details(int? id)
         {
@@ -41,7 +43,7 @@ namespace PropertyManagementApp.Controllers
         {
             return View();
         }
-
+        
         // POST: AvailableUnitInfoRequests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -63,6 +65,7 @@ namespace PropertyManagementApp.Controllers
             return View(availableUnitInfoRequests);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: AvailableUnitInfoRequests/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -78,6 +81,7 @@ namespace PropertyManagementApp.Controllers
             return View(availableUnitInfoRequests);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: AvailableUnitInfoRequests/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -94,6 +98,7 @@ namespace PropertyManagementApp.Controllers
             return View(availableUnitInfoRequests);
         }
 
+        [Authorize(Roles = "Manager")]
         // GET: AvailableUnitInfoRequests/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -109,6 +114,7 @@ namespace PropertyManagementApp.Controllers
             return View(availableUnitInfoRequests);
         }
 
+        [Authorize(Roles = "Manager")]
         // POST: AvailableUnitInfoRequests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -55,6 +55,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Apis, Version=1.30.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.30.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.30.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.30.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.30.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.30.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
@@ -401,6 +410,10 @@
     <Compile Include="Migrations\201711092023187_just kidding, really add availableUnitninforequests.Designer.cs">
       <DependentUpon>201711092023187_just kidding, really add availableUnitninforequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711120131582_Add address to vacancies.cs" />
+    <Compile Include="Migrations\201711120131582_Add address to vacancies.Designer.cs">
+      <DependentUpon>201711120131582_Add address to vacancies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AvailableUnitInfoRequests.cs" />
@@ -561,11 +574,10 @@
     <Content Include="Views\AvailableUnitInfoRequests\Index.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Vacancies\Maps.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MailGun\" />
-    <Folder Include="Views\PayPal\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -680,6 +692,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711092023187_just kidding, really add availableUnitninforequests.resx">
       <DependentUpon>201711092023187_just kidding, really add availableUnitninforequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711120131582_Add address to vacancies.resx">
+      <DependentUpon>201711120131582_Add address to vacancies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
