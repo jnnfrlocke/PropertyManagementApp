@@ -17,14 +17,11 @@ namespace PropertyManagementApp.Controllers
         }
 
         //Stripe charge
-        // Using ActionResult instead of IActionResult like the docs say to
-        // Using PayRent instead of Index
         public ActionResult Error()
         {
             return View();
         }
-
-
+        
         [Authorize(Roles = "Resident")]
         public ActionResult PayRent(string stripeEmail, string stripeId, int? pmtAmount)
         {
@@ -45,7 +42,6 @@ namespace PropertyManagementApp.Controllers
                 CustomerId = customer.Id,
                 ReceiptEmail = customer.Email
             });
-
             return View();
         }
         
@@ -79,6 +75,4 @@ namespace PropertyManagementApp.Controllers
             return View();
         }
     }
-
-    
 }

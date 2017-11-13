@@ -13,13 +13,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Location)
+            @Html.ActionLink("Location", "Index", new { sortOrder = ViewBag.LocationSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Location)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TypeOfService)
+            @Html.ActionLink("Type of Service", "Index", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.TypeOfService)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Details)
@@ -31,7 +34,8 @@
             @Html.DisplayNameFor(model => model.DateSubmitted)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContractorUsed)
+            @Html.ActionLink("Contractor Used", "Index", new { sortOrder = ViewBag.ContractorSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.ContractorUsed)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FollowUpNeeded)

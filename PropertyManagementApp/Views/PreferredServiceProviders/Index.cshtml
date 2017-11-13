@@ -10,16 +10,30 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Company Name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Full List", "Index")
+        </p>
+    </div>
+</form>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.ActionLink("Type", "Index", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Type)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PreApproved)
+            @Html.ActionLink("Pre Approved", "Index", new { sortOrder = ViewBag.PreApprovedSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.PreApproved)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Company)
+            @Html.ActionLink("Company", "Index", new { sortOrder = ViewBag.CompanySortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Company)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Contact)
@@ -98,3 +112,5 @@
 }
 
 </table>
+<br />
+

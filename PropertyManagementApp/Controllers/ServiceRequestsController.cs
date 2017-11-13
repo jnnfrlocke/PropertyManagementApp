@@ -17,9 +17,52 @@ namespace PropertyManagementApp.Controllers
 
         [Authorize(Roles = "Manager")]
         // GET: ServiceRequests
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.ServiceRequests.ToList());
+        //}
+
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString)
         {
-            return View(db.ServiceRequests.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_asc" : "";
+            ViewBag.LocationSortParm = String.IsNullOrEmpty(sortOrder) ? "location_desc" : "";
+            ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_desc" : "";
+            ViewBag.ContractorSortParm = String.IsNullOrEmpty(sortOrder) ? "contractor_desc" : "";
+
+            //searchString = currentFilter;
+            //ViewBag.CurrentFilter = searchString;
+
+
+            var requests = from r in db.ServiceRequests
+                            select r;
+
+
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+                //requests = requests.Where(r => r.Name.Contains(searchString)
+                //                       || r.Name.Contains(searchString));
+            //}
+            switch (sortOrder)
+            {
+                case "name_asc":
+                    requests = requests.OrderBy(r => r.Name);
+                    break;
+                case "location_desc":
+                    requests = requests.OrderBy(r => r.Location);
+                    break;
+                case "type_desc":
+                    requests = requests.OrderBy(r => r.TypeOfService);
+                    break;
+                case "contractor_desc":
+                    requests = requests.OrderBy(r => r.ContractorUsed);
+                    break;
+                default:
+                    requests = requests.OrderBy(p => p.Id);
+                    break;
+            }
+            return View(requests.ToList());
+
+
         }
 
         [Authorize(Roles = "Manager")]

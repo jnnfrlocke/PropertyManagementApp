@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity.EntityFramework;
 using PropertyManagementApp.Models;
 
-namespace A11_RBS.Controllers
+namespace PropertyManagementApp.Controllers
 {
     public class RoleController : Controller
     {
@@ -15,21 +15,21 @@ namespace A11_RBS.Controllers
             context = new ApplicationDbContext();
         }
 
-        [Authorize(Roles = "Manager")]
+        //[Authorize(Roles = "Manager")]
         public ActionResult Index()
         {
             var Roles = context.Roles.ToList();
             return View(Roles);
         }
 
-        [Authorize(Roles = "Manager")]
+        //[Authorize(Roles = "Manager")]
         public ActionResult Create()
         {
             var Role = new IdentityRole();
             return View(Role);
         }
 
-        [Authorize(Roles = "Manager")]
+        //[Authorize(Roles = "Manager")]
         [HttpPost]
         public ActionResult Create(IdentityRole Role)
         {

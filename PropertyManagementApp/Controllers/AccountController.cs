@@ -18,8 +18,16 @@ namespace PropertyManagementApp.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        ApplicationDbContext context;
         public AccountController()
         {
+            context = new ApplicationDbContext();
+        }
+
+        public string GetUser()
+        {
+            string user = System.Web.HttpContext.Current.User.Identity.GetUserId();
+            return user;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,6 +147,7 @@ namespace PropertyManagementApp.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles, "Name", "Name");
             return View();
         }
 
@@ -155,6 +164,10 @@ namespace PropertyManagementApp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Assign Role to user Here 
+                    await UserManager.AddToRoleAsync(user.Id, model.Name);
+                    //Ends Here
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

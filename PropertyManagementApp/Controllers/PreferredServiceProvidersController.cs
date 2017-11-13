@@ -7,6 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PropertyManagementApp.Models;
+using PropertyManagementApp.Apis;
+using PropertyManagementApp.Properties;
+using PagedList;
+using System.Data.Entity.Infrastructure;
+
 
 namespace PropertyManagementApp.Controllers
 {
@@ -16,9 +21,51 @@ namespace PropertyManagementApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: PreferredServiceProviders
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.PreferredServiceProviders.ToList());
+        //}
+
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.PreferredServiceProviders.ToList());
+            //ViewBag.CurrentSort = sortOrder;
+            ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_asc" : "";
+            ViewBag.CompanySortParm = sortOrder == "Company" ? "company_desc" : "Company";
+            ViewBag.PreApprovedSortParm = String.IsNullOrEmpty(sortOrder) ? "preApproved_desc" : "";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+            var providers = from p in db.PreferredServiceProviders
+                           select p;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                providers = providers.Where(p => p.Company.Contains(searchString)
+                                       || p.Company.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "type_asc":
+                    providers = providers.OrderBy(p => p.Type);
+                    break;
+                case "company_desc":
+                    providers = providers.OrderBy(p => p.Company);
+                    break;
+                case "preApproved_desc":
+                    providers = providers.OrderByDescending(p => p.PreApproved);
+                    break;
+                default:
+                    providers = providers.OrderBy(p => p.Id);
+                    break;
+            }
+            return View(providers.ToList());
         }
 
         // GET: PreferredServiceProviders/Details/5
