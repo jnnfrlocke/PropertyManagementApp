@@ -7,6 +7,7 @@ using RestSharp;
 using PropertyManagementApp.Apis;
 using Stripe;
 
+
 namespace PropertyManagementApp.Controllers
 {
     public class HomeController : Controller
@@ -27,6 +28,7 @@ namespace PropertyManagementApp.Controllers
         {
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
+            int? paymentAmount = pmtAmount * 100;
 
             var customer = customers.Create(new StripeCustomerCreateOptions
             {
@@ -36,7 +38,7 @@ namespace PropertyManagementApp.Controllers
 
             var charge = charges.Create(new StripeChargeCreateOptions
             {
-                Amount = pmtAmount,// 500 charges $5.00
+                Amount = 12000,// 500 charges $5.00
                 Description = "Payment Amount",
                 Currency = "usd",
                 CustomerId = customer.Id,

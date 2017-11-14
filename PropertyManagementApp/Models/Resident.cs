@@ -27,5 +27,8 @@ namespace PropertyManagementApp.Models
 
         [Display(Name = "Payment in US Dollars")]
         public int Payment { get; set; }
+
+        public ApplicationUser User { get; set; }
+        public string UserId { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@*@model PropertyManagementApp.Models.Resident*@
-@model IEnumerable<PropertyManagementApp.Models.Resident>
+@model PropertyManagementApp.Models.Resident
 @*@inject IOptions<StripeSettings> Stripe*@
 
 @{
@@ -10,17 +10,63 @@
 <h2>Please Verify that this information is correct.</h2>
 
 @* If correct go to EnterPaymentAmount *@
-<h4>If correct, @Html.ActionLink("click here", "EnterPaymentAmount") to enter your payment amount.<br />
+<h4>If correct, <a href="../EnterPaymentAmount/@ViewBag.Id">click here</a> @*@Html.ActionLink("click here", "EnterPaymentAmount/@ViewBag.Id")*@ to enter your payment amount.<br />
     If incorrect, please @Html.ActionLink("click here", "SendToManager", "Messages") to contact your building's manager to update it.</h4>
 <br />
 
 
-@using (Html.BeginForm("PayRent", "Residents"))
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+    </dl>
+</div>
+
+
+
+
+
+
+
+
+
+@*@using (Html.BeginForm("PayRent", "Residents"))
 {
-<table class="table">
+<table class="table">*@
     @*Make sure to pass value for currently logged in user*@
    
-        <tr>
+        @*<tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -59,7 +105,7 @@
        </tr>
 }
     </table>
-}
+}*@
 
 @*<div class="form-group">
     <div class="col-md-offset-2 col-md-10">

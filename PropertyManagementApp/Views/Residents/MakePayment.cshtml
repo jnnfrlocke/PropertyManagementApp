@@ -15,7 +15,7 @@
 <h2>Payment</h2>
 <form action="/Home/PayRent" method="POST">
     <article>
-        <label>Amount: $@Model.Payment</label>
+        <label>Amount: $@ViewBag.Pmt</label>
         <label_tag(:amount, :'Payment:')>
                     <text_field_tag(:amount)>
                 </article>
@@ -23,7 +23,7 @@
                         class="stripe-button"
                         data-key="@Credentials.StripePublishableKey"
                         data-locale="auto"
-                        data-description="Sample Charge"
-                        data-amount="@Model.Payment">
+                        data-description="Rent Payment"
+                        data-amount="@ViewBag.StripePmt">
                 </script>
             </form>

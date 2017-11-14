@@ -424,6 +424,14 @@
     <Compile Include="Migrations\201711131629585_Update account view model.Designer.cs">
       <DependentUpon>201711131629585_Update account view model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711132056510_Add fk to resident model.cs" />
+    <Compile Include="Migrations\201711132056510_Add fk to resident model.Designer.cs">
+      <DependentUpon>201711132056510_Add fk to resident model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711132126495_Add UserId to resident model.cs" />
+    <Compile Include="Migrations\201711132126495_Add UserId to resident model.Designer.cs">
+      <DependentUpon>201711132126495_Add UserId to resident model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AvailableUnitInfoRequests.cs" />
@@ -709,6 +717,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711131629585_Update account view model.resx">
       <DependentUpon>201711131629585_Update account view model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711132056510_Add fk to resident model.resx">
+      <DependentUpon>201711132056510_Add fk to resident model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711132126495_Add UserId to resident model.resx">
+      <DependentUpon>201711132126495_Add UserId to resident model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
