@@ -61,8 +61,8 @@ namespace PropertyManagementApp.Controllers
         
         public ActionResult Maps()
         {
-            GoogleMaps newMap = new GoogleMaps();
-            newMap.GetFormattedUrl();
+            //GoogleMaps newMap = new GoogleMaps();
+            //newMap.GetFormattedUrl();
             return View();
         }
 

@@ -24,15 +24,7 @@ namespace PropertyManagementApp.Apis
             return results;
         }
 
-        public void GetFormattedUrl()
-        {
-            string baseUrl = "https://maps.googleapis.com/maps/api/geocode";
-            string jsonQuery = $"/json?address=2221+W+Kendall+Ave,+Glendale,+WI&key={Credentials.GeoCodeApiKey}";
-            string formattedUrl = baseUrl + jsonQuery;
-            ParseLatLong(formattedUrl);
-        }
-
-        public string[] ParseLatLong(string formattedUrl)
+       public string[] ParseLatLong(string formattedUrl)
         {
             Rootobject resObj = GetLatLong(formattedUrl);
             string lat = resObj.results[0].geometry.location.lat.ToString();
