@@ -36,20 +36,12 @@ namespace PropertyManagementApp.Apis
         public Rootobject GetLatLong(string url)
         {
             List<string> resList = new List<string>();
-            // Create Rest client
             var client = new RestClient(url);
-
-            // define request method/type
+            
             var request = new RestRequest(Method.GET);
-
-            // add headers
-
-            // build body if not get type
-
-            //execute request
+            
             IRestResponse response = client.Execute(request);
-
-            //return response
+            
             string content = response.Content;
             Rootobject mapdata = JsonConvert.DeserializeObject<Rootobject>(content);
             return mapdata;

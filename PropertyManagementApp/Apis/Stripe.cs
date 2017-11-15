@@ -7,11 +7,6 @@ namespace PropertyManagementApp.Apis
 {
     public class Stripe
     {
-
-
         public string apiEndpoint = "https://api.stripe.com";
-
-
-
     }
 }

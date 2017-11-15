@@ -33,15 +33,13 @@
         
         google.maps.visualRefresh = true;
             var MitchellOnWater = new google.maps.LatLng(43.0330517, -87.9088048);
-
-        // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
+        
         var mapOptions = {
             zoom: 14,
             center: MitchellOnWater,
             mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
         };
-
-        // This makes the div with id "map_canvas" a google map
+        
         var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
         
         var data = [
@@ -64,21 +62,17 @@
             });
             
             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
-
-            // put in some information about each json object - in this case, the opening hours.
+            
             var infowindow = new google.maps.InfoWindow({
                 content: "<h4>" + item.PlaceName + "</h4>"
             });
-
-            // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
+            
             google.maps.event.addListener(marker, 'click', function () {
                 infowindow.open(map, marker);
             });
 
         })
     }
-
-
         </script>
     </section>
 } 
