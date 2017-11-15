@@ -47,7 +47,7 @@ namespace PropertyManagementApp.Apis
             request.AddParameter("from", sender);
             request.AddParameter("to", residentEmail);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", $"From Your Manager's Name:\n{body}");
+            request.AddParameter("text", $"From Your Building Manager:\n{body}");
             request.Method = Method.POST;
             return client.Execute(request);
         }
@@ -66,7 +66,7 @@ namespace PropertyManagementApp.Apis
             request.AddParameter("from", sender);
             request.AddParameter("to", residentEmail);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", $"{building}\nFrom Your Manager's Name:\n{body}");
+            request.AddParameter("text", $"{building}\nFrom Your Building Manager:\n{body}");
             request.Method = Method.POST;
             return client.Execute(request);
         }
@@ -105,7 +105,7 @@ namespace PropertyManagementApp.Apis
             request.AddParameter("from", sender);
             request.AddParameter("to", residentEmail);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", $"{building}\nFrom {resident} in unit {unit}:\n{body}");
+            request.AddParameter("text", $"To {building}\nFrom {resident} in unit {unit}:\n{body}");
             request.Method = Method.POST;
             return client.Execute(request);
         }
