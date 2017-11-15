@@ -185,7 +185,6 @@ namespace PropertyManagementApp.Controllers
                 ViewBag.Pmt = result.Payment;
                 ViewBag.StripePmt = result.Payment * 100;
             }
-
             return View(resident);
         }
 

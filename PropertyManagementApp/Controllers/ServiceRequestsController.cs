@@ -16,12 +16,7 @@ namespace PropertyManagementApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         [Authorize(Roles = "Manager")]
-        // GET: ServiceRequests
-        //public ActionResult Index()
-        //{
-        //    return View(db.ServiceRequests.ToList());
-        //}
-
+        
         public ActionResult Index(string sortOrder, string currentFilter, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_asc" : "";
@@ -29,19 +24,9 @@ namespace PropertyManagementApp.Controllers
             ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_desc" : "";
             ViewBag.ContractorSortParm = String.IsNullOrEmpty(sortOrder) ? "contractor_desc" : "";
 
-            //searchString = currentFilter;
-            //ViewBag.CurrentFilter = searchString;
-
-
             var requests = from r in db.ServiceRequests
                             select r;
-
-
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-                //requests = requests.Where(r => r.Name.Contains(searchString)
-                //                       || r.Name.Contains(searchString));
-            //}
+            
             switch (sortOrder)
             {
                 case "name_asc":

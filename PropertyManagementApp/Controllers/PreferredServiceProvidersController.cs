@@ -20,15 +20,8 @@ namespace PropertyManagementApp.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: PreferredServiceProviders
-        //public ActionResult Index()
-        //{
-        //    return View(db.PreferredServiceProviders.ToList());
-        //}
-
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            //ViewBag.CurrentSort = sortOrder;
             ViewBag.TypeSortParm = String.IsNullOrEmpty(sortOrder) ? "type_asc" : "";
             ViewBag.CompanySortParm = sortOrder == "Company" ? "company_desc" : "Company";
             ViewBag.PreApprovedSortParm = String.IsNullOrEmpty(sortOrder) ? "preApproved_desc" : "";
