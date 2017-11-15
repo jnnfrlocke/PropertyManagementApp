@@ -548,7 +548,6 @@
     <Content Include="Views\ServiceRequests\Edit.cshtml" />
     <Content Include="Views\ServiceRequests\Index.cshtml" />
     <Content Include="Views\Home\Maps.cshtml" />
-    <Content Include="Views\Welcome\Manager.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
@@ -581,7 +580,6 @@
     <Content Include="Views\Messages\SendFromResidentToResident.cshtml" />
     <Content Include="Views\Messages\SendFromResidentToBuilding.cshtml" />
     <Content Include="Views\Residents\PayRent.cshtml" />
-    <Content Include="Views\Home\Charge.cshtml" />
     <Content Include="Views\Home\PayRent.cshtml" />
     <Content Include="Views\Residents\EnterPaymentAmount.cshtml" />
     <Content Include="Views\Residents\MakePayment.cshtml" />

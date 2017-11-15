@@ -1,36 +1,36 @@
 ﻿@model PropertyManagementApp.Models.Manager
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manager Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 class="text-center">@ViewBag.Title</h2>
 <div class="container">
     <div class="row">
         <div class="col-md-6 table-bordered">
-            <h4><a href="~/ServiceRequests">Units Currently Needing Service</a></h4>
+            <h4 class="text-center"><a href="~/ServiceRequests">Units Currently Needing Service</a></h4>
         </div>
         <div class="col-md-6 table-bordered">
-            <h4><a href="~/PreferredServiceProviders">Service Providers</a></h4>
+            <h4 class="text-center"><a href="~/PreferredServiceProviders">Service Providers</a></h4>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4 table-bordered">
-            <h4><a href="~/Messages/SendMessageFromManagerToResident">Send Email to a Resident</a></h4>
+            <h4 class="text-center"><a href="~/Messages/SendMessageFromManagerToResident">Send Email to a Resident</a></h4>
         </div>
 
         <div class="col-md-4 table-bordered">
-            <h4><a href="~/Messages/SendFromManagerToBuilding">Send Email to a Building</a></h4>
+            <h4 class="text-center"><a href="~/Messages/SendFromManagerToBuilding">Send Email to a Building</a></h4>
         </div>
 
         <div class="col-md-4 table-bordered">
-            <h4><a href="https://dashboard.stripe.com/test/payments">Payments</a></h4>
+            <h4 class="text-center"><a href="https://dashboard.stripe.com/test/payments">Payments</a></h4>
         </div>
      </div>
     <div class="row">
-        <div class="col-md-5 col-md-offset-1 table-bordered">
-            <h4><a href="~/Vacancies/Index">Manage Vacancies</a></h4>
+        <div class="table-bordered">
+            <h4 class="text-center"><a href="~/Vacancies/Index">Manage Vacancies</a></h4>
         </div>
     </div>
 </div>

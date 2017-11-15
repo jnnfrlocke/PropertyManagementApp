@@ -1,6 +1,4 @@
-﻿@*@model PropertyManagementApp.Models.Resident*@
-@model PropertyManagementApp.Models.Resident
-@*@inject IOptions<StripeSettings> Stripe*@
+﻿@model PropertyManagementApp.Models.Resident
 
 @{
     ViewBag.Title = "Pay Rent";
@@ -10,7 +8,7 @@
 <h2>Please Verify that this information is correct.</h2>
 
 @* If correct go to EnterPaymentAmount *@
-<h4>If correct, <a href="../EnterPaymentAmount/@ViewBag.Id">click here</a> @*@Html.ActionLink("click here", "EnterPaymentAmount/@ViewBag.Id")*@ to enter your payment amount.<br />
+<h4>If correct, <a href="../EnterPaymentAmount/@ViewBag.Id">click here</a> to enter your payment amount.<br />
     If incorrect, please @Html.ActionLink("click here", "SendToManager", "Messages") to contact your building's manager to update it.</h4>
 <br />
 
@@ -52,81 +50,3 @@
 
     </dl>
 </div>
-
-
-
-
-
-
-
-
-
-@*@using (Html.BeginForm("PayRent", "Residents"))
-{
-<table class="table">*@
-    @*Make sure to pass value for currently logged in user*@
-   
-        @*<tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rent)
-            </th>
-           <th>
-                @Html.DisplayNameFor(model => model.EmailAddress)
-            </th>
-            <th></th>
-        </tr>
-@foreach (var item in Model)
-{
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Unit)
-            </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.Rent)
-            </th>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-       </tr>
-}
-    </table>
-}*@
-
-@*<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Set Payment" class="btn btn-default" />
-    </div>
-</div>
-}
-
-        <h2>Payment</h2>
-        <form action="/Home/PayRent" method="POST">
-            <article>
-                <label>Amount: $5.00</label>
-                @*<label_tag(:amount, :'Payment:')>
-                <text_field_tag(:amount)>
-            </article>
-            <script src="//checkout.stripe.com/v2/checkout.js"
-                    class="stripe-button"
-                    data-key="@Credentials.StripePublishableKey"
-                    data-locale="auto"
-                    data-description="Sample Charge"
-                    data-amount="500">
-            </script>
-        </form>*@
-

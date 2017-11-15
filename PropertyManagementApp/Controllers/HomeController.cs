@@ -42,7 +42,7 @@ namespace PropertyManagementApp.Controllers
             var charge = charges.Create(new StripeChargeCreateOptions
             {
 
-                Amount = amount,// 500 charges $5.00
+                Amount = 100000,// 500 charges $5.00
                 Description = "Payment Amount",
                 Currency = "usd",
                 CustomerId = customer.Id,

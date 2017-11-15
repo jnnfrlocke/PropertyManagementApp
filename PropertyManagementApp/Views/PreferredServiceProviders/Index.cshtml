@@ -25,15 +25,12 @@
     <tr>
         <th>
             @Html.ActionLink("Type", "Index", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.Type)*@
         </th>
         <th>
             @Html.ActionLink("Pre Approved", "Index", new { sortOrder = ViewBag.PreApprovedSortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.PreApproved)*@
         </th>
         <th>
             @Html.ActionLink("Company", "Index", new { sortOrder = ViewBag.CompanySortParm, currentFilter = ViewBag.CurrentFilter })
-            @*@Html.DisplayNameFor(model => model.Company)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Contact)

@@ -1,28 +1,20 @@
 ﻿@model PropertyManagementApp.Models.Messages
 
 @{
-    ViewBag.Title = "SendFromManagerToBuilding";
+    ViewBag.Title = "Send a Message to a Building";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>SendFromManagerToBuilding</h2>
+<h2>Send a Message to a Building</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Messages</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.Resident, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Resident, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Resident, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
+       
         <div class="form-group">
                 @Html.LabelFor(model => model.BuildingName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -30,14 +22,6 @@
                     @Html.ValidationMessageFor(model => model.BuildingName, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            @*<div class="form-group">
-                @Html.LabelFor(model => model.Unit, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Unit, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label col-md-2" })

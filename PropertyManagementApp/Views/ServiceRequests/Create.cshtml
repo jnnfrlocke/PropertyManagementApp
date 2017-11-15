@@ -65,50 +65,12 @@
         </div>
 
         <div class="form-group">
-            @* Set date to today automatically *@
             @Html.LabelFor(model => model.DateSubmitted, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DateSubmitted, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DateSubmitted, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        @*<div class="form-group">
-            @Html.HiddenFor(model => model.ContractorUsed, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.HiddenFor(model => model.ContractorUsed, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ContractorUsed, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        @*<div class="form-group">
-            @Html.HiddenFor(model => model.FollowUpNeeded, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.HiddenFor(model => model.FollowUpNeeded)
-                    @Html.ValidationMessageFor(model => model.FollowUpNeeded, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.HiddenFor(model => model.Completed, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.HiddenFor(model => model.Completed)
-                    @Html.ValidationMessageFor(model => model.Completed, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.HiddenFor(model => model.DateCompleted, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.HiddenFor(model => model.DateCompleted, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateCompleted, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
