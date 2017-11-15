@@ -24,25 +24,30 @@ namespace PropertyManagementApp.Controllers
         }
         
         [Authorize(Roles = "Resident")]
-        public ActionResult PayRent(string stripeEmail, string stripeId, int? pmtAmount)
+        public ActionResult PayRent(string stripeEmail, string stripeToken, int? amount)
         {
+            StripeConfiguration.SetApiKey(Credentials.StripeSecretKey);
+            //var token = model.Token;
+
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
-            int? paymentAmount = pmtAmount * 100;
+            int? paymentAmount = amount * 100;
 
             var customer = customers.Create(new StripeCustomerCreateOptions
             {
                 Email = stripeEmail,
-                SourceToken = stripeId,
+                SourceToken = stripeToken,
             });
 
             var charge = charges.Create(new StripeChargeCreateOptions
             {
-                Amount = 12000,// 500 charges $5.00
+
+                Amount = amount,// 500 charges $5.00
                 Description = "Payment Amount",
                 Currency = "usd",
                 CustomerId = customer.Id,
-                ReceiptEmail = customer.Email
+                ReceiptEmail = customer.Email,
+                //SourceTokenOrExistingSourceId = 
             });
             return View();
         }
@@ -58,8 +63,6 @@ namespace PropertyManagementApp.Controllers
         {
             GoogleMaps newMap = new GoogleMaps();
             newMap.GetFormattedUrl();
-
-
             return View();
         }
 
