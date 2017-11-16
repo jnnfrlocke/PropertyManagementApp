@@ -14,7 +14,7 @@
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find by Company Name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            Type of Service Needed: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
             <input type="submit" value="Search" class="btn btn-default" /> |
             @Html.ActionLink("Back to Full List", "Index")
         </p>

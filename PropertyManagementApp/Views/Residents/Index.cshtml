@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Residents</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -14,6 +14,10 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.ActionLink("Current", "Index", new { sortOrder = ViewBag.CurrentSortParam, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Current)*@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Location)
@@ -34,6 +38,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Current)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Location)

@@ -13,6 +13,8 @@ namespace PropertyManagementApp.Models
 
         public string Name { get; set; }
 
+        public bool Current { get; set; }
+
         [Display(Name ="Name of Bulding")]
         public string Location { get; set; }
 

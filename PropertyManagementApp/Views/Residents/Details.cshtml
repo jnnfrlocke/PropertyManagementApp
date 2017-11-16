@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Resident's Details</h2>
 
 <div>
-    <h4>Resident</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,6 +16,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Current)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Current)
         </dd>
 
         <dt>
@@ -33,6 +40,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Unit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rent)
         </dd>
 
         <dt>

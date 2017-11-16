@@ -40,8 +40,8 @@ namespace PropertyManagementApp.Controllers
                            select p;
             if (!String.IsNullOrEmpty(searchString))
             {
-                providers = providers.Where(p => p.Company.Contains(searchString)
-                                       || p.Company.Contains(searchString));
+                providers = providers.Where(p => p.Type.Contains(searchString)
+                                       || p.Type.Contains(searchString));
             }
             switch (sortOrder)
             {

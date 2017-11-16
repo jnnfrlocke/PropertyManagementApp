@@ -18,9 +18,25 @@ namespace PropertyManagementApp.Controllers
 
         [Authorize(Roles = "Manager")]
         // GET: Residents
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Residents.ToList());
+            ViewBag.CurrentSortParam = String.IsNullOrEmpty(sortOrder) ? "current_asc" : "";
+
+            var requests = from r in db.Residents
+                           select r;
+
+            switch (sortOrder)
+            {
+                case "current_asc":
+                    requests = requests.OrderBy(r => r.Current);
+                    break;
+                default:
+                    requests = requests.OrderBy(p => p.Id);
+                    break;
+            }
+
+
+            return View(requests.ToList());
         }
 
         [Authorize(Roles = "Resident")]
@@ -89,7 +105,7 @@ namespace PropertyManagementApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Location,Unit,EmailAddress")] Resident resident)
+        public ActionResult Create([Bind(Include = "Id,Name,Location,Unit,EmailAddress,Current,UserId,Rent")] Resident resident)
         {
             if (ModelState.IsValid)
             {
@@ -123,7 +139,7 @@ namespace PropertyManagementApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Location,Unit,EmailAddress")] Resident resident)
+        public ActionResult Edit([Bind(Include = "Id,Name,Location,Unit,EmailAddress,Current,Rent,UserId")] Resident resident)
         {
             if (ModelState.IsValid)
             {
@@ -156,7 +172,7 @@ namespace PropertyManagementApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EnterPaymentAmount([Bind(Include = "Id,Name,Location,Unit,EmailAddress,Rent,Payment,UserId")] Resident resident)
+        public ActionResult EnterPaymentAmount([Bind(Include = "Id,Name,Location,Unit,EmailAddress,Rent,Payment,UserId,Current")] Resident resident)
         {
             if (ModelState.IsValid)
             {
